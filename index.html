@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Selim Bulut</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .timeline-container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .timeline .container {
+            width: 45%;
+            margin: 20px 0;
+            position: relative;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .timeline .container.left {
+            align-self: flex-start;
+        }
+
+        .timeline .container.right {
+            align-self: flex-end;
+        }
+
+        .timeline .container .time {
+            position: absolute;
+            top: -10px;
+            background-color: #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .timeline .container.left .time {
+            left: 20px;
+        }
+
+        .timeline .container.right .time {
+            right: 20px;
+        }
+
+        .timeline .container .content {
+            padding: 15px;
+            background-color: white;
+            border-radius: 6px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barre de navigation -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Page d'accueil</b></a>
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">À propos</a>
+      <a href="#timeline" class="w3-bar-item w3-button">Parcours</a>
+      <a href="#projects" class="w3-bar-item w3-button">Projets</a>
+      <a href="#ai-watch" class="w3-bar-item w3-button">Veille Techno IA</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#github" class="w3-bar-item w3-button">Mon GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- Section principale -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="slide.jpg" alt="Image d'arrière-plan" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Ilhan</b></span> <span class="w3-hide-small w3-text-light-grey">Bulut</span></h1>
+  </div>
+</header>
+
+<!-- Section À propos -->
+<div class="w3-container w3-padding-32" id="about">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">À propos</h3>
+  <p>Né en Septembre 2002, je suis un étudiant de 22 ans qui souhaite en apprendre plus sur le monde de l'informatique et développer mes connaissances de manière générale. Dans l'objectif d'être totalement indépendant et construire mon avenir, j'ai fait le choix de l'alternance.
+    De plus, je trouve que l'apprentissage en pratique est plus conbstructif que de ne faire que de la théorie.</p>
+</div>
+
+<!-- Section Parcours -->
+<div class="w3-container w3-padding-32" id="timeline">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Parcours</h3>
+  <div class="timeline">
+    <div class="container left">
+      <div class="time">2017-2020</div>
+      <div class="content">
+        <h4>BAC en Gestion Administration</h4>
+        <p>La gestion administrative organise et coordonne les activités d'une organisation pour assurer son efficacité et sa conformité.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="time">2022-2025</div>
+      <div class="content">
+        <h4>BTS SIO SLAM</h4>
+        <p>Le BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) forme en deux ans des techniciens spécialisés en développement d’applications, programmation, et gestion de bases de données, adaptés aux besoins des entreprises</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-padding-32" id="projects">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projets</h3>
+  <p>Voici quelques projets récents :</p>
+  <ul>
+    <li><b>Application de gestion des tâches :</b> Développement d'une application web en JavaScript et Node.js permettant de créer, modifier et supprimer des tâches. Inclut une interface utilisateur dynamique avec React.</li>
+    <li><b>Site e-commerce fictif :</b> Réalisation d'un site de commerce électronique utilisant HTML, CSS et PHP avec une base de données MySQL. Intégration d'une fonctionnalité de panier et de gestion des produits.</li>
+    <li><b>Portfolio interactif :</b> Création d'un site web personnel utilisant JavaScript, CSS avancé (animations) et une interface utilisateur responsive pour présenter mes compétences et projets.</li>
+    <li><b>Outil de suivi des dépenses :</b> Développement d'une application mobile cross-platform (React Native) pour gérer et visualiser les dépenses personnelles avec des graphiques interactifs.</li>
+    <li><b>Dashboard analytique :</b> Conception d'un tableau de bord en Python avec Flask pour visualiser des données d'entreprise, incluant des graphiques interactifs réalisés avec Chart.js.</li>
+  </ul>
+</div>
+
+<!-- Section Veille Technologique -->
+<div class="w3-container w3-padding-32" id="ai-watch">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Veille Technologique sur l'IA</h3>
+  <p>Je m'intéresse particulièrement aux évolutions dans le domaine de l'intelligence artificielle. Voici quelques sujets récents que j'ai explorés :</p>
+  <ul>
+    <li>Les modèles de langage avancés comme GPT et leurs applications.</li>
+    <li>Les impacts de l'IA générative sur les industries créatives.</li>
+    <li>Les systèmes d'apprentissage par renforcement dans les jeux vidéo.</li>
+  </ul>
+</div>
+
+<!-- Section Contact -->
+<div class="w3-container w3-padding-32" id="contact">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+  <p>Pour me contacter, envoyez un e-mail à <a href="mailto:selim.bulut029@gmail.com">selim.bulut029@gmail.com</a> ou appelez-moi au <a href="tel:+33787325488">+33 07 87 32 54 88</a></p>
+</div>
+
+<!-- Section GitHub -->
+<div class="w3-container w3-padding-32" id="github">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Mon GitHub</h3>
+  <p>Retrouvez mes projets sur GitHub :</p>
+  <a href="https://github.com/SelimBu" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Mon GitHub</a>
+</div>
+
+</body>
+</html>
