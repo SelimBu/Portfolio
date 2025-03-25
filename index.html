@@ -8,64 +8,195 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #07032e;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #f0f0f0;
+            line-height: 1.6;
         }
 
-        .timeline-container {
-            width: 80%;
-            margin: 50px auto;
+        /* Barre de navigation */
+        .w3-top {
+            background-color: rgba(7, 3, 46, 0.9) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        .w3-bar-item {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+
+        .w3-bar-item:hover {
+            color: #2272FF !important;
+            transform: translateY(-2px);
+        }
+
+        /* En-tête */
+        header {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, #07032e 0%, #0a0a2a 100%);
+        }
+
+        .w3-display-middle h1 {
+            text-shadow: 0 0 10px rgba(34, 114, 255, 0.5);
+            letter-spacing: 3px;
+        }
+
+        .w3-display-middle span {
+            padding: 15px 25px;
+            background-color: rgba(34, 114, 255, 0.2);
+            border: 1px solid #2272FF;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        .w3-container {
+            background-color: #0e0b3a;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+        }
+
+        .w3-border-bottom {
+            border-bottom: 2px solid #2272FF !important;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #2272FF;
+        }
+
+        /* Timeline */
         .timeline {
             position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            padding: 20px 0;
         }
 
-        .timeline .container {
-            width: 45%;
-            margin: 20px 0;
-            position: relative;
-            background-color: #eee;
-            border-radius: 5px;
-            padding: 20px;
-        }
-
-        .timeline .container.left {
-            align-self: flex-start;
-        }
-
-        .timeline .container.right {
-            align-self: flex-end;
-        }
-
-        .timeline .container .time {
+        .timeline::before {
+            content: '';
             position: absolute;
-            top: -10px;
-            background-color: #ddd;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
+            width: 2px;
+            background-color: #2272FF;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
         }
 
-        .timeline .container.left .time {
-            left: 20px;
-        }
-
-        .timeline .container.right .time {
-            right: 20px;
-        }
-
-        .timeline .container .content {
-            padding: 15px;
-            background-color: white;
-            border-radius: 6px;
+        .container {
+            padding: 10px 40px;
             position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .container.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .container.right {
+            left: 50%;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: rgba(34, 114, 255, 0.1);
+            border-left: 3px solid #2272FF;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .right .content {
+            border-left: none;
+            border-right: 3px solid #2272FF;
+        }
+
+        .content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(34, 114, 255, 0.3);
+        }
+
+        .time {
+            color: #2272FF;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+            background-color: rgba(34, 114, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Projets et listes */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(34, 114, 255, 0.05);
+            border-left: 3px solid #2272FF;
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            background-color: rgba(34, 114, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        /* Boutons */
+        .w3-button {
+            background-color: #2272FF !important;
+            color: white !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .w3-button:hover {
+            background-color: #1a5acc !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(34, 114, 255, 0.4);
+        }
+
+        /* Liens */
+        a {
+            color: #2272FF;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #4d8eff;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .container.right {
+                left: 0%;
+            }
+
+            .container.left, .container.right {
+                text-align: left;
+            }
+
+            .right .content {
+                border-left: 3px solid #2272FF;
+                border-right: none;
+            }
         }
     </style>
 </head>
@@ -109,14 +240,14 @@
       <div class="time">2017-2020</div>
       <div class="content">
         <h4>Première scientifique et Bac économique et social</h4>
-        <p>À cette époque, j’ai préféré explorer différentes approches avant de me spécialiser. Ce parcours varié m’a permis d’affiner mon projet professionnel et de choisir l’informatique en pleine conscience..</p>
+        <p>À cette époque, j'ai préféré explorer différentes approches avant de me spécialiser. Ce parcours varié m'a permis d'affiner mon projet professionnel et de choisir l'informatique en pleine conscience.</p>
       </div>
     </div>
     <div class="container right">
       <div class="time">2022-2025</div>
       <div class="content">
         <h4>BTS SIO SLAM</h4>
-        <p>Le BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) forme en deux ans des techniciens spécialisés en développement d’applications, programmation, et gestion de bases de données, adaptés aux besoins des entreprises</p>
+        <p>Le BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) forme en deux ans des techniciens spécialisés en développement d'applications, programmation, et gestion de bases de données, adaptés aux besoins des entreprises</p>
       </div>
     </div>
   </div>
